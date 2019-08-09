@@ -36,11 +36,9 @@ axios
 
   });
 
+let cardContainer = document.querySelector('.cards-container');
 
 function cardComponent(article){
-
-    console.log(article);
-
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
 
@@ -66,6 +64,10 @@ function cardComponent(article){
 
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
+
+    // console.log(cardDiv);
+
+    cardContainer.appendChild(cardDiv);
 }
 
 // <div class="card">
