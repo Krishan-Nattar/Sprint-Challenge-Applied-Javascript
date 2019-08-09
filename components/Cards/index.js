@@ -28,16 +28,25 @@ axios
 
     console.log(articleArrays);
 
+    articleArrays.forEach(array=>{
+        array.forEach(article=>{
+            cardComponent(article);
+        })
+    })
+
   });
 
 
 function cardComponent(article){
+
+    console.log(article);
+
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
 
     let headlineDiv = document.createElement('div');
     headlineDiv.classList.add('headline');
-    headline.textContent = "headline content";
+    headlineDiv.textContent = article.headline;
 
     let authorDiv = document.createElement('div');
     authorDiv.classList.add('author');
@@ -46,9 +55,10 @@ function cardComponent(article){
     imgDiv.classList.add('img-container');
 
     let authorImg = document.createElement('img');
-    authorImg.src = "source";
+    authorImg.src = article.authorPhoto;
 
     let authorNameSpan = document.createElement('span');
+    authorNameSpan.textContent = article.authorName;
 
     imgDiv.appendChild(authorImg);
     authorDiv.appendChild(imgDiv);
@@ -56,9 +66,6 @@ function cardComponent(article){
 
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
-
-
-    console.log(cardDiv);
 }
 
 // <div class="card">
