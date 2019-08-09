@@ -18,8 +18,7 @@
   </div>
 */
 
-let carouselContainer = document.querySelector=('.carousel-container');
-
+let carouselContainer = document.querySelector('.carousel-container');
 
 function carouselCreator(){
   let carDiv = document.createElement('div');
@@ -52,6 +51,7 @@ function carouselCreator(){
   carDiv.appendChild(rightButton);
 
   console.log(carDiv);
+  carouselContainer.appendChild(carDiv);
 }
 
 carouselCreator();
