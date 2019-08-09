@@ -21,8 +21,12 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    console.log(response.data.articles);
+    // console.log(response.data.articles);
     let articleObjects = response.data.articles;
+
+    let articleArrays = Object.values(articleObjects);
+
+    console.log(articleArrays);
 
   });
 
