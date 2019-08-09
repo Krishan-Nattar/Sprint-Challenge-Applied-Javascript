@@ -27,6 +27,9 @@ function carouselCreator(){
   let leftButton = document.createElement('div');
   leftButton.classList.add('left-button');
   leftButton.textContent = "<";
+  leftButton.addEventListener('click', ()=>{
+    leftClick();
+  })
 
   let img1 = document.createElement('img');
   let img2 = document.createElement('img');
@@ -42,6 +45,9 @@ function carouselCreator(){
   let rightButton = document.createElement('div');
   rightButton.classList.add('right-button');
   rightButton.textContent = ">";
+  rightButton.addEventListener('click', ()=>{
+    rightClick();
+  })
 
   carDiv.appendChild(leftButton)
   carDiv.appendChild(img1)
@@ -52,6 +58,14 @@ function carouselCreator(){
 
   console.log(carDiv);
   carouselContainer.appendChild(carDiv);
+}
+
+function rightClick(){
+  console.log('right');
+}
+
+function leftClick(){
+  console.log('left');
 }
 
 carouselCreator();
