@@ -56,16 +56,18 @@ function carouselCreator(){
   carDiv.appendChild(img4)
   carDiv.appendChild(rightButton);
 
-  console.log(carDiv);
   carouselContainer.appendChild(carDiv);
 }
 
 function rightClick(){
-  console.log('right');
+  
 }
 
 function leftClick(){
-  console.log('left');
+  
 }
 
 carouselCreator();
+
+let allImages = document.querySelectorAll('.carousel img');
+console.log(allImages);
