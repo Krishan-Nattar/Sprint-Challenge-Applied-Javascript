@@ -84,7 +84,13 @@ function leftClick(){
 
 function rightClick(){
   
-  
+  if(currentImage<allImages.length-1){
+    currentImage++;
+  } else{
+    currentImage=0;
+  }
+
+  console.log(currentImage);
   //slide image out
 
   //slide new image in
