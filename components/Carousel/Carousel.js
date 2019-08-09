@@ -75,7 +75,9 @@ function leftClick(){
     currentImage = allImages.length-1;
   }
 
-  console.log(currentImage);
+  let slideIn = allImages[currentImage];
+
+  
   //slide image out
 
   //slide new image in
@@ -83,6 +85,8 @@ function leftClick(){
 }
 
 function rightClick(){
+
+  let slideOut = allImages[currentImage];
   
   if(currentImage<allImages.length-1){
     currentImage++;
@@ -90,7 +94,9 @@ function rightClick(){
     currentImage=0;
   }
 
-  console.log(currentImage);
+  let slideIn = allImages[currentImage];
+
+  
   //slide image out
 
   //slide new image in
