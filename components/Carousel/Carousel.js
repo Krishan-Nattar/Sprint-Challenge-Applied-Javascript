@@ -30,6 +30,7 @@ function carouselCreator(){
   leftButton.addEventListener('click', ()=>{
     leftClick();
   })
+  leftButton.style.zIndex = "99";
 
   let img1 = document.createElement('img');
   let img2 = document.createElement('img');
