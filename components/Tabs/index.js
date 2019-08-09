@@ -12,12 +12,17 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
-    
-    console.log(response);
+    let topics = response.data.topics;
 
-    
-  })
-  .catch(err => {
-    // deal with the error in here
+    topics.forEach(topic=>{
+        tabComponent(topic);
+    });
     
   });
+
+
+  function tabComponent(topic){
+
+    console.log(topic);
+
+  }
