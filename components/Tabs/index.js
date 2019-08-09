@@ -11,6 +11,7 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(response => {
+
     let topics = response.data.topics;
 
     topics.forEach(topic => {
@@ -24,5 +25,10 @@ function tabComponent(topic) {
   let tabDiv = document.createElement("div");
   tabDiv.classList.add("tab");
   tabDiv.textContent = topic;
+
+  let reformatTopic = topic.split('.');
+  reformatTopic = reformatTopic[0];
+  tabDiv.setAttribute('data-show', reformatTopic);
+  
   topicsSection.appendChild(tabDiv);
 }

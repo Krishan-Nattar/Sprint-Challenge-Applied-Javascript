@@ -22,12 +22,16 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
 
+
+
     let articleObjects = response.data.articles;
     let articleArrays = Object.values(articleObjects);
+    let articleTopics = Object.keys(articleObjects);
 
-    articleArrays.forEach(array=>{
+    articleArrays.forEach((array,index)=>{
+
         array.forEach(article=>{
-            cardComponent(article);
+            cardComponent(article, articleTopics[index]);
         })
     })
 
@@ -35,9 +39,13 @@ axios
 
 let cardContainer = document.querySelector('.cards-container');
 
-function cardComponent(article){
+function cardComponent(article, topic){
+  // console.log(article);
+  // console.log(topic);
+  
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
+    // cardDiv
 
     let headlineDiv = document.createElement('div');
     headlineDiv.classList.add('headline');
