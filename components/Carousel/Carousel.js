@@ -79,7 +79,7 @@ function rightEvent(){
 function leftClick(){
 
   leftBtn.removeEventListener('click', leftClick);
-  setTimeout(leftEvent, 5000);
+  setTimeout(leftEvent, 1000);
   
   let slideOut = allImages[currentImage];
 
@@ -98,10 +98,10 @@ function leftClick(){
    TweenMax.to(slideIn, 0, { transform: "translate(100%)", position: "absolute", animationTimingFunction: "linear", ease: "linear", transitionTimingFunction: "linear"  });
 
    //Move current image to the left off screen
-   TweenMax.to(slideOut, 5, {transform: "translate(-100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
+   TweenMax.to(slideOut, 1, {transform: "translate(-100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
    
    //Move standyby image into the screen
-   TweenMax.to(slideIn, 5, {position: "absolute", display:"block", transform: "translate(0%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"   });
+   TweenMax.to(slideIn, 1, {position: "absolute", display:"block", transform: "translate(0%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"   });
    
   
 }
@@ -109,7 +109,7 @@ function leftClick(){
 function rightClick(){
 
   rightBtn.removeEventListener('click', rightClick);
-  setTimeout(rightEvent, 5000);
+  setTimeout(rightEvent, 1000);
 
   let slideOut = allImages[currentImage];
   
@@ -125,10 +125,10 @@ function rightClick(){
     TweenMax.to(slideIn, 0, { transform: "translate(-100%)"});
 
     //Move standyby image into the screen
-    TweenMax.to(slideIn, 5, {transform: "translate(0%)", transitionTimingFunction: "linear", ease: "linear"   });
+    TweenMax.to(slideIn, 1, {transform: "translate(0%)", transitionTimingFunction: "linear", ease: "linear"   });
   
     //Move current image to the RIGHT off screen
-    TweenMax.to(slideOut, 5, {transform: "translate(100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
+    TweenMax.to(slideOut, 1, {transform: "translate(100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
 }
 
 
