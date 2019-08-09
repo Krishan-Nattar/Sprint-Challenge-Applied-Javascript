@@ -71,3 +71,7 @@ carouselCreator();
 
 let allImages = document.querySelectorAll('.carousel img');
 console.log(allImages);
+
+allImages.forEach(image=>{
+  TweenMax.to(image, 0, {position: "absolute", display:"block",transform: "translate(-100%)"}); 
+})
