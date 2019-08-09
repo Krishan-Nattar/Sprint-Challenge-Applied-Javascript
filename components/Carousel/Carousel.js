@@ -61,11 +61,26 @@ function carouselCreator(){
 }
 
 function rightClick(){
+
+  //select current image on screen
+
+  //if current image is index 0, select last image in list to be new current image to slide in
+
+  //slide image out
+
+  //slide new image in
   
 }
 
 function leftClick(){
   
+  //select current image on screen
+
+  //if current image is nodelist length-1, select  image[0] in list to be new current image to slide in
+
+  //slide image out
+
+  //slide new image in
 }
 
 carouselCreator();
