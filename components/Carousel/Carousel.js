@@ -60,7 +60,14 @@ function carouselCreator(){
   carouselContainer.appendChild(carDiv);
 }
 
+carouselCreator();
+
 let currentImage = 0;
+
+
+let leftBtn = document.querySelector('.left-button');
+let rightBtn = document.querySelector('.right-button');
+
 
 function leftClick(){
 
@@ -78,9 +85,14 @@ function leftClick(){
   let slideIn = allImages[currentImage];
 
   
-  //slide image out
+   //Start off to the right side
+   TweenMax.to(slideIn, 0, { transform: "translate(100%)", position: "absolute", animationTimingFunction: "linear", ease: "linear", transitionTimingFunction: "linear"  });
 
-  //slide new image in
+   //Move current image to the left off screen
+   TweenMax.to(slideOut, 5, {transform: "translate(-100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
+   
+   //Move standyby image into the screen
+   TweenMax.to(slideIn, 5, {position: "absolute", display:"block", transform: "translate(0%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"   });
   
 }
 
@@ -96,13 +108,17 @@ function rightClick(){
 
   let slideIn = allImages[currentImage];
 
-  
-  //slide image out
+    //Start off to the LEFT side
+    TweenMax.to(slideIn, 0, { transform: "translate(-100%)"});
 
-  //slide new image in
+    //Move standyby image into the screen
+    TweenMax.to(slideIn, 5, {transform: "translate(0%)", transitionTimingFunction: "linear", ease: "linear"   });
+  
+    //Move current image to the RIGHT off screen
+    TweenMax.to(slideOut, 5, {transform: "translate(100%)", transitionTimingFunction: "linear", animationTimingFunction: "linear", ease: "linear"  });
 }
 
-carouselCreator();
+
 
 let allImages = document.querySelectorAll('.carousel img');
 
