@@ -21,12 +21,9 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    // console.log(response.data.articles);
+
     let articleObjects = response.data.articles;
-
     let articleArrays = Object.values(articleObjects);
-
-    console.log(articleArrays);
 
     articleArrays.forEach(array=>{
         array.forEach(article=>{
@@ -65,17 +62,5 @@ function cardComponent(article){
     cardDiv.appendChild(headlineDiv);
     cardDiv.appendChild(authorDiv);
 
-    // console.log(cardDiv);
-
     cardContainer.appendChild(cardDiv);
 }
-
-// <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
