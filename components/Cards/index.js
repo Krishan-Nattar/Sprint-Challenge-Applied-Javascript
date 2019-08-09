@@ -28,6 +28,13 @@ axios
     let articleArrays = Object.values(articleObjects);
     let articleTopics = Object.keys(articleObjects);
 
+    let topicButtons = document.querySelectorAll('.tabs .topics div');
+    topicButtons.forEach(item=>{
+      let data = item.getAttribute('data-show');
+      item.addEventListener('click', ()=>dataClick(data));
+      
+    })
+    // console.log(topicButtons);
     articleArrays.forEach((array,index)=>{
 
         array.forEach(article=>{
@@ -40,12 +47,10 @@ axios
 let cardContainer = document.querySelector('.cards-container');
 
 function cardComponent(article, topic){
-  // console.log(article);
-  // console.log(topic);
   
     let cardDiv = document.createElement('div');
     cardDiv.classList.add('card');
-    // cardDiv
+    cardDiv.setAttribute('data-topic', topic);
 
     let headlineDiv = document.createElement('div');
     headlineDiv.classList.add('headline');
@@ -71,4 +76,15 @@ function cardComponent(article, topic){
     cardDiv.appendChild(authorDiv);
 
     cardContainer.appendChild(cardDiv);
+}
+
+function dataClick(data){
+  let selectAllCards = document.querySelectorAll('.card');
+  selectAllCards.forEach(card=>{
+    let thisTopic = card.getAttribute('data-topic');
+    card.style.display ="none";
+    if(thisTopic===data){
+      card.style.display = "flex";
+    }
+  })
 }
