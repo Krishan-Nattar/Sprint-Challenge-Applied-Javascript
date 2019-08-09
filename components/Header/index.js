@@ -9,6 +9,8 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
+let headerContainer = document.querySelector('.header-container');
+
 function Header() 
 {
 let headerDiv = document.createElement('div');
@@ -27,4 +29,8 @@ let headerDiv = document.createElement('div');
     headerDiv.appendChild(span1);
     headerDiv.appendChild(h1);
     headerDiv.appendChild(span2);
+
+    headerContainer.appendChild(headerDiv);
 }
+
+Header();
