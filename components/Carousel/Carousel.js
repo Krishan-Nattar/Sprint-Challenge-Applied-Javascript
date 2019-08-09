@@ -60,24 +60,31 @@ function carouselCreator(){
   carouselContainer.appendChild(carDiv);
 }
 
-function rightClick(){
+let currentImage = 0;
 
-  //select current image on screen
+function leftClick(){
 
-  //if current image is index 0, select last image in list to be new current image to slide in
+  
+  let slideOut = allImages[currentImage];
 
+  
+
+  if(currentImage > 0){
+    currentImage--;
+  } else{
+    currentImage = allImages.length-1;
+  }
+
+  console.log(currentImage);
   //slide image out
 
   //slide new image in
   
 }
 
-function leftClick(){
+function rightClick(){
   
-  //select current image on screen
-
-  //if current image is nodelist length-1, select  image[0] in list to be new current image to slide in
-
+  
   //slide image out
 
   //slide new image in
@@ -86,7 +93,6 @@ function leftClick(){
 carouselCreator();
 
 let allImages = document.querySelectorAll('.carousel img');
-console.log(allImages);
 
 allImages.forEach((image,index)=>{
   TweenMax.to(image, 0, {position: "absolute", display:"block",transform: "translate(-100%)"}); 
