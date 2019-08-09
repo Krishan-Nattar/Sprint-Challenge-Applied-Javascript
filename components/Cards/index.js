@@ -21,11 +21,48 @@
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    console.log(response);
-
-
-
+    console.log(response.data.articles);
+    let articleObjects = response.data.articles;
 
   });
 
 
+function cardComponent(article){
+    let cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+
+    let headlineDiv = document.createElement('div');
+    headlineDiv.classList.add('headline');
+    headline.textContent = "headline content";
+
+    let authorDiv = document.createElement('div');
+    authorDiv.classList.add('author');
+
+    let imgDiv = document.createElement('div');
+    imgDiv.classList.add('img-container');
+
+    let authorImg = document.createElement('img');
+    authorImg.src = "source";
+
+    let authorNameSpan = document.createElement('span');
+
+    imgDiv.appendChild(authorImg);
+    authorDiv.appendChild(imgDiv);
+    authorDiv.appendChild(authorNameSpan);
+
+    cardDiv.appendChild(headlineDiv);
+    cardDiv.appendChild(authorDiv);
+
+
+    console.log(cardDiv);
+}
+
+// <div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {authors name}</span>
+//   </div>
+// </div>
